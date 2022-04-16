@@ -1,0 +1,35 @@
+{
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "name": "cube-demo-panorama",
+  "description": "Cube Panorama Demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "clone-deep": "^4.0.1",
+    "is-plain-object": "^2.0.4",
+    "isobject": "^3.0.1",
+    "kind-of": "^6.0.3",
+    "shallow-clone": "^3.0.1",
+    "wildcard": "^2.0.0"
+  },
+  "scripts": {
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EurekaLabdawara/CubePanoramaProto.git"
+  },
+  "author": "Eureka Labdawara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EurekaLabdawara/CubePanoramaProto/issues"
+  },
+  "homepage": "https://github.com/EurekaLabdawara/CubePanoramaProto#readme"
+}
