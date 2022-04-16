@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Title</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes view-control-buttons">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-back">
+        <li class="text">Back</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-front">
+        <li class="text">Front</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<dialog id="modal" class="modal hotspot info-hotspot">
+  <div style="width: 100%;">
+    <div style="width: 100%-40px;">
+      <h1></h1>
+    </div>
+    <div class="close-custom-modal" style="background-color: var(--cube-orange); width: 40px; height: 40px; border-radius: 20px; position: absolute; right: 0px; top: 0px;">
+      <img src="img/close.png" alt="close-modal" width="40px" height="40px">
+    </div>
+  </div>
+  <div class="custom-modal-wrapper" >
+    <iframe class="custom-modal-content" width="513" height="360" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- <object data="" type="application/pdf" width="500px" height="600px" id="pdf-viewer" class="custom-modal-content">
+      <p>Your web browser doesn't have a PDF plugin.
+       <a href="">click here to download the PDF file.</a></p>
+    </object> -->
+    <iframe src="" frameborder="0" type="application/pdf" width="500px" height="600px" id="pdf-viewer" class="custom-modal-content"></iframe>
+  </div>
+</dialog>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<a href="javascript:void(0)" id="audioBtn" class="viewControlButton viewControlButton-7">
+  <img class="icon" src="img/audio.png" style="filter: invert(1);">
+</a>
+
+<audio autoplay loop id="BGM">
+  <source src="audio/BGM.mp3" type="audio/mpeg">
+</audio>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
