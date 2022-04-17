@@ -651,6 +651,19 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 
 /* Info hotspot modal */
 
+.custom-modal-wrapper{
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .modal{
   width: 80vw;
   max-height: 90vh;
