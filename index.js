@@ -185,6 +185,12 @@
 
   audioToggleElement.addEventListener('click',toggleAudio);
 
+  document.querySelector('#BGM').addEventListener("canplaythrough", event => {
+    /* the audio is now playable; play it if permissions allow */
+    document.querySelector('#BGM').play();
+    console.log('audio played')
+  })
+
   function sanitize(s) {
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
   }
@@ -204,6 +210,7 @@
 
   function toggleAudio(e) {
     document.querySelector('#BGM').muted = !document.querySelector('#BGM').muted
+    console.log('audio toggled')
   }
 
   function updateSceneList(scene) {

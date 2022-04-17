@@ -653,7 +653,8 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 
 .modal{
   width: 80vw;
-  height: 90vh;
+  max-height: 90vh;
+  min-height: fit-content;
   background-color: white;
   border-color: transparent;
   border-radius:20px;
