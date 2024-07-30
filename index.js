@@ -17,7 +17,7 @@
 
 (function() {
   var Marzipano = window.Marzipano;
-  var bowser = window.bowser;
+  // var bowser = window.bowser;
   var screenfull = window.screenfull;
   var data = window.APP_DATA;
 
@@ -56,9 +56,9 @@
   });
 
   // Use tooltip fallback mode on IE < 11.
-  if (bowser.msie && parseFloat(bowser.version) < 11) {
-    document.body.classList.add('tooltip-fallback');
-  }
+  // if (bowser.msie && parseFloat(bowser.version) < 11) {
+  //   document.body.classList.add('tooltip-fallback');
+  // }
 
   // Viewer options.
   var viewerOpts = {
@@ -169,6 +169,7 @@
   var viewInElement = document.querySelector('#viewIn');
   var viewOutElement = document.querySelector('#viewOut');
   var audioToggleElement = document.querySelector('#audioBtn');
+  var audio = document.querySelector('#BGM');
 
   // Dynamic parameters for controls.
   var velocity = 0.7;
@@ -183,13 +184,24 @@
   controls.registerMethod('inElement',    new Marzipano.ElementPressControlMethod(viewInElement,  'zoom', -velocity, friction), true);
   controls.registerMethod('outElement',   new Marzipano.ElementPressControlMethod(viewOutElement, 'zoom',  velocity, friction), true);
 
-  audioToggleElement.addEventListener('click',toggleAudio);
+  audioToggleElement.addEventListener('click', function () {
+    console.log("audio", audio);
+    if (audio.muted) {
+      audio.muted = false
+      audio.play();
+    } else {
+      audio.muted = true
+      audio.pause();
+    }
+    console.log("audio new mute state", audio.muted);
+    console.log('audio toggled');
+  });
 
-  document.querySelector('#BGM').addEventListener("canplaythrough", event => {
-    /* the audio is now playable; play it if permissions allow */
-    document.querySelector('#BGM').play();
-    console.log('audio played')
-  })
+  // document.querySelector('#BGM').addEventListener("canplaythrough", event => {
+  //   /* the audio is now playable; play it if permissions allow */
+  //   audio.play();
+  //   console.log('audio played')
+  // })
 
   function sanitize(s) {
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
@@ -206,11 +218,6 @@
 
   function updateSceneName(scene) {
     sceneNameElement.innerHTML = sanitize(scene.data.name);
-  }
-
-  function toggleAudio(e) {
-    document.querySelector('#BGM').muted = !document.querySelector('#BGM').muted
-    console.log('audio toggled')
   }
 
   function updateSceneList(scene) {

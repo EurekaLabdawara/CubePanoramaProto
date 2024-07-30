@@ -3,11 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './index.js',
+    app: ['./index.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Production',
+      title: 'Cube Panorama Demo',
+      template: 'index.html',
     }),
   ],
   output: {
