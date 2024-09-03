@@ -1,3 +1,5 @@
+import data from './data.js';
+
 /*
  * Copyright 2016 Google Inc. All rights reserved.
  *
